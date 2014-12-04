@@ -1,0 +1,27 @@
+/*custom CSS file*/
+
+img {
+	/*width: 100%;*/
+	max-width: 100%;
+}
+
+#about img {
+	width: 100%;
+	max-width: 100%;
+}
+
+#about .ui-grid-a .ui-block-a {
+	width: 69%;
+	padding-right: 1%;
+}
+#about .ui-grid-a .ui-block-b {
+	width: 30%;
+}
+
+.noname, .noemail {
+	color: red;
+}
+
+.jumbotron .btn {
+	width: 100%;
+}
