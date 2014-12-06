@@ -12,7 +12,7 @@
 
         <!--row 2 -->
     <div class="jumbotron">
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Sign Up</a></p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Log In</a></p>
+      <p><a class="btn btn-primary btn-lg" href="/signup" role="button">Sign Up</a></p>
+      <p><a class="btn btn-primary btn-lg" href="/login" role="button">Log In</a></p>
     </div>
 @stop

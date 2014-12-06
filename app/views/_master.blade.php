@@ -5,7 +5,6 @@
     <title>@yield('title', 'Matryoshka International')</title>
 
     <meta charset='utf-8'>
-    <link rel='stylesheet' href='{{ asset('css/foobar.css') }}'>
         <!-- Bootstrap -->
     <link rel='stylesheet' href='{{ asset('css/bootstrap.min.css') }}'>
     <link rel='stylesheet' href='{{ asset('css/custom.css') }}'>
@@ -15,19 +14,32 @@
 </head>
 <body>
 
+	@if(Session::get('flash_message'))
+    <div class='flash-message'>{{ Session::get('flash_message') }}</div>
+    @endif
+
 	<div class="container">
+
+	@yield('navbar')
 
     <!-- row 1 -->
     <header class="row">
       <div class="col-lg-7 col-md-8 col-sm-7">
         <h1>Matryoshka International</h1>
+
+		@if(Auth::check())
+		    <a href='/logout'>Log out {{ Auth::user()->email; }}</a>
+		@else 
+		    <a href='/signup'>Sign up</a> or <a href='/login'>Log in</a>
+		@endif
+        
         <ul class="header-description">
           <li><h3>Learn foreign languages with peers around the world.</h3></li>
           <li><h3>Attend international events and make new friends along the way.</h3></li>
         </ul>
       </div>
       <div class="col-lg-5 col-md-4 col-sm-4 col-xs-5">
-        <p><a href="#"><img src="img/matryoshka_int_horiz.png" alt="" class="img-responsive" id="matryoshka-logo-horiz"></a></p>
+        <p><a href="#"><img src="/img/matryoshka_int_horiz.png" alt="" class="img-responsive" id="matryoshka-logo-horiz"></a></p>
       </div>
     </header>
 

@@ -58,12 +58,14 @@ Route::post('/signup',
     )
 );
 
-/*Route::get('/login', 
+Route::get('/login',
     array(
-        'before' => 'guest', 
-        'uses' => 'UserController@getLogin'
-        )
-);*/
+        'before' => 'guest',
+        function() {
+            return View::make('login');
+        }
+    )
+);
 
 Route::post('/login', 
     array(
@@ -93,8 +95,6 @@ Route::get('/logout', function() {
     return Redirect::to('/');
 
 });
-
-Route::controller('user', 'UserController');
 
 Route::get('/addmeetup', function() {
 
