@@ -1,11 +1,11 @@
 @extends('_master')
 
 @section('title')
-    User Profile
+    All MeetUps
 @stop
 
 @section('head')
-    <link rel='stylesheet' href='/css/hello-world.css' type='text/css'>
+    
 @stop
 
 @section('navbar')
@@ -23,9 +23,9 @@
         <div class="collapse navbar-collapse" id="collapse">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
-            <li><a href="/meetup">All MeetUps</a></li>
+            <li class="active"><a href="/meetup">All MeetUps</a></li>
             <li><a href="/meetup/create">Add a MeetUp</a></li>
-            <li class="active"><a href="/profile">Your Profile</a></li>
+            <li><a href="/profile">Your Profile</a></li>
             <li><a href="/contactus">Contact Us</a></li>
             <li><a href="/logout">Log Out</a></li>
           </ul>
@@ -36,13 +36,41 @@
 
 @section('content')
 
-    <!--row 2 -->
     <ol class="breadcrumb">
       <li>Home</li>
-      <li>All MeetUps</li>
-      <li>Add a MeetUp</li>
-      <li class="active">Your Profile</li>
+      <li class="active">All MeetUps</li>
     </ol>
 
-	<h1>Hello There! </h1>   
+<div class="jumbotron">
+	<h1>All MeetUps</h1>
+
+</div>
+	   <div class="col-lg-5 col-md-4 col-sm-4 col-xs-5" id="matr_vert">
+        <p><a href="#"><img src="/img/matryoshka_int_vert.png" alt="" class="img-responsive" id="matryoshka-logo-vert"></a></p>
+      </div>
+	@if($query)
+		<h2>You searched for {{{ $query }}}</h2>
+	@endif
+
+	@if(sizeof($meetups) == 0)
+		No results
+	@else
+		@foreach($meetups as $meetup)
+			<section class='meetup'>
+
+				<h2>{{ $meetup['name'] }}</h2>
+
+				<!--<p>
+					<a href='/meetup/edit/{{$meetup['id']}}'>Edit</a>
+				</p> -->
+
+				<p>
+					{{ $meetup['language']['name'] }} ({{ $meetup['date'] }}) ({{ $meetup['location'] }})
+				</p>
+
+				<a href='{{ $meetup['city_link'] }}'>Check out the city!</a> -->
+			</section>
+		@endforeach
+	@endif
+
 @stop

@@ -32,7 +32,7 @@
 		@else 
 		    <a href='/signup'>Sign up</a> or <a href='/login'>Log in</a>
 		@endif
-        
+
         <ul class="header-description">
           <li><h3>Learn foreign languages with peers around the world.</h3></li>
           <li><h3>Attend international events and make new friends along the way.</h3></li>
@@ -52,12 +52,12 @@
 
 </div> <!--closing the container tag-->
 
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'></script>
     <!-- javascript -->
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/app.js"></script>
   <script src="js/respond.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/search.js"></script>
 
     <!--@yield('footer')-->
 

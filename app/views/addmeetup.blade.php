@@ -22,9 +22,9 @@
         </div>
         <div class="collapse navbar-collapse" id="collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/home">Home</a></li>
-            <li><a href="/allmeetups">All MeetUps</a></li>
-            <li class="active"><a href="/addmeetup">Add a MeetUp</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/meetup">All MeetUps</a></li>
+            <li class="active"><a href="/meetup/create">Add a MeetUp</a></li>
             <li><a href="/profile">Your Profile</a></li>
             <li><a href="/contactus">Contact Us</a></li>
             <li><a href="/">Sign Out</a></li>
@@ -40,28 +40,29 @@
     <ol class="breadcrumb">
       <li>Home</li>
       <li>All MeetUps</li>
-      <li class="active">Add a MeetUp</li>
+      <li class="active">Add a new MeetUp</li>
     </ol>
   <div class="jumbotron">
+
     {{ Form::open(array('url' => '/meetup/create')) }}
 
 
-    {{ Form::label('name','MeeUp Name') }}
-    {{ Form::text('name'); }}
+   <p> {{ Form::label('name','MeeUp Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;') }}
+    {{ Form::text('name'); }} </p>
 
-    {{ Form::label('language', 'Language Spoken at the MeetUp') }}
-    {{ Form::select('language', $languages); }}
+    <p> {{ Form::label('language_id', 'Language Spoken at the MeetUp') }}
+    {{ Form::select('language_id', $languages); }} </p>
 
-    {{ Form::label('date','Date (MM/DD/YYYY)') }}
-    {{ Form::text('date'); }}
+    <p> {{ Form::label('date','Date (MM/DD/YYYY)') }}
+    {{ Form::text('date'); }} </p>
 
-    {{ Form::label('city','City') }}
-    {{ Form::text('city'); }}
+    <p> {{ Form::label('location','City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;') }}
+    {{ Form::text('location'); }} </p>
 
-    {{ Form::label('city_link','Wikipedia Link of the City') }}
-    {{ Form::text('city_link'); }}
+    <p> {{ Form::label('city_link','Wikipedia Link of the City') }}
+    {{ Form::text('city_link'); }} </p>
 
-    {{ Form::submit('Add'); }}
+    <p> {{ Form::submit('Add'); }} </p>
 
   {{ Form::close() }}
   </div>

@@ -19,7 +19,7 @@ class List {
 
 	}
 
-	public function getEvents () {
+	public function getMeetups () {
 
 		return $this->meetups;
 	}

@@ -16,6 +16,12 @@ class UserController extends BaseController {
 
     }
 
+    public function getAuth() {
+
+        return View::make('auth');
+
+    }
+
 
     /**
     * Show the new user signup form
@@ -39,7 +45,7 @@ class UserController extends BaseController {
             'password' => 'required|min:6'
         );
 
-        # Step 2)
+        # Step 2
         $validator = Validator::make(Input::all(), $rules);
 
         # Step 3
@@ -67,7 +73,7 @@ class UserController extends BaseController {
         # Log in
         Auth::login($user);
 
-        return Redirect::to('/')->with('flash_message', 'Welcome to Foobooks!');
+        return Redirect::to('/')->with('flash_message', 'Welcome to Matryoshka Int!');
 
     }
 
@@ -93,12 +99,12 @@ class UserController extends BaseController {
             return Redirect::intended('/')->with('flash_message', 'Welcome Back!');
         }
         else {
-            return Redirect::to('/login')
+            return Redirect::to('login')
                 ->with('flash_message', 'Log in failed; please try again.')
                 ->withInput();
         }
 
-        return Redirect::to('login');
+        return Redirect::to('/');
 
     }
 
@@ -107,7 +113,7 @@ class UserController extends BaseController {
     * Logout
     * @return Redirect
     */
-    public function anyLogout() {
+    public function getLogout() {
 
         # Log out
         Auth::logout();
@@ -115,6 +121,33 @@ class UserController extends BaseController {
         # Send them to the homepage
         return Redirect::to('/');
 
+    }
+
+    public function getProfile(){
+        return View::make('profile');
+    }
+
+
+    /**
+    * Show the "Edit a user profile" form
+    * @return View
+    */
+    public function getEdit($id) {
+
+        return View::make('user_edit')
+            ->with('user', $user)
+            //->with('authors', $authors);
+    }
+    /**
+    * Process the "Edit a book form"
+    * @return Redirect
+    */
+    public function postEdit() {
+
+        # http://laravel.com/docs/4.2/eloquent#mass-assignment
+        $user->fill(Input::all());
+        $user->save();
+        return Redirect::action('UserController@getProfile')->with('flash_message','Your changes have been saved.');
     }
 
 }
