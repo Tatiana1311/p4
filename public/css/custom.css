@@ -38,6 +38,7 @@ input[type=checkbox] {
 .meetups {
 	float: right;
 	clear: right;
+	padding-right: 10em;
 }
 
 html, body {
@@ -58,5 +59,5 @@ html, body {
   margin-top: -150px; /* negative value of footer height */
   height: 100px;
   clear:both;
-  padding:1em 1em 0em;
+  padding:1em 5em 0em;
 } 
