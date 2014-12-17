@@ -15,8 +15,11 @@
 <body>
 
 	@if(Session::get('flash_message'))
-    <div class='flash-message'>{{ Session::get('flash_message') }}</div>
+    <div class='flash-message alert alert-info'>{{ Session::get('flash_message') }}</div>
     @endif
+
+ <div id="wrap">   
+  <div id="main" class="container clear-top">
 
 	<div class="container">
 
@@ -45,7 +48,10 @@
 
     @yield('content')
 
-    <footer class="row">
+    </div> <!-- closing main tag-->
+  </div> <!--closing wrap tag-->
+
+    <footer class="row" id ="footer">
       <p><small>Copyright by Matryoshka Int. All rights reserved.</small></p>
     </footer>
 
@@ -59,7 +65,6 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="js/search.js"></script>
 
-    <!--@yield('footer')-->
 
 </body>
 </html>

@@ -14,11 +14,11 @@
 	<h1>Log In</h1>
 {{ Form::open(array('url' => '/login')) }}
 
-    Email<br>
-    {{ Form::text('email') }}<br><br>
+    {{ Form::label('email') }}
+    {{ Form::text('email', 't@gmail.com') }}
 
-    Password:<br>
-    {{ Form::password('password') }}<br><br>
+    {{ Form::label('password') }} (123456)
+    {{ Form::password('password') }}
 
     {{ Form::submit('Submit') }}
 

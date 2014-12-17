@@ -127,27 +127,4 @@ class UserController extends BaseController {
         return View::make('profile');
     }
 
-
-    /**
-    * Show the "Edit a user profile" form
-    * @return View
-    */
-    public function getEdit($id) {
-
-        return View::make('user_edit')
-            ->with('user', $user)
-            //->with('authors', $authors);
-    }
-    /**
-    * Process the "Edit a book form"
-    * @return Redirect
-    */
-    public function postEdit() {
-
-        # http://laravel.com/docs/4.2/eloquent#mass-assignment
-        $user->fill(Input::all());
-        $user->save();
-        return Redirect::action('UserController@getProfile')->with('flash_message','Your changes have been saved.');
-    }
-
 }

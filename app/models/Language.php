@@ -16,7 +16,7 @@ class Language extends Eloquent {
 	*/
     public static function getIdNamePair() {
 		$languages = Array();
-		$collection = language::all();
+		$collection = Language::all();
 		foreach($collection as $language) {
 			$languages[$language->id] = $language->name;
 		}

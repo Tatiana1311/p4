@@ -26,7 +26,6 @@
             <li class="active"><a href="/meetup">All MeetUps</a></li>
             <li><a href="/meetup/create">Add a MeetUp</a></li>
             <li><a href="/profile">Your Profile</a></li>
-            <li><a href="/contactus">Contact Us</a></li>
             <li><a href="/logout">Log Out</a></li>
           </ul>
         </div>
@@ -43,11 +42,11 @@
 
 <div class="jumbotron">
 	<h1>All MeetUps</h1>
-
 </div>
 	   <div class="col-lg-5 col-md-4 col-sm-4 col-xs-5" id="matr_vert">
         <p><a href="#"><img src="/img/matryoshka_int_vert.png" alt="" class="img-responsive" id="matryoshka-logo-vert"></a></p>
       </div>
+  <div class="meetups">
 	@if($query)
 		<h2>You searched for {{{ $query }}}</h2>
 	@endif
@@ -68,9 +67,12 @@
 					{{ $meetup['language']['name'] }} ({{ $meetup['date'] }}) ({{ $meetup['location'] }})
 				</p>
 
-				<a href='{{ $meetup['city_link'] }}'>Check out the city!</a> -->
+				<a href='{{ $meetup['city_link'] }}'>Check out the city!</a> --> <br>
+
+        <a href='/meetup/edit/{{$meetup['id']}}'>See something wrong? Edit the meetup!</a>
 			</section>
 		@endforeach
 	@endif
+</div>
 
 @stop

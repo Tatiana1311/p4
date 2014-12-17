@@ -122,14 +122,14 @@ class MeetupController extends BaseController {
 	public function getEdit($id) {
 
 		try {
-		    $meetup    = Meetup::findOrFail($id);
+		    $meetup = Meetup::findOrFail($id);
 		    $languages = Language::getIdNamePair();
 		}
 		catch(exception $e) {
 		    return Redirect::to('/meetup')->with('flash_message', 'MeetUp not found');
 		}
 
-    	return View::make('edit')
+    	return View::make('meetup_edit')
     		->with('meetup', $meetup)
     		->with('languages', $languages);
 
@@ -142,20 +142,39 @@ class MeetupController extends BaseController {
 	public function postEdit() {
 
 		try {
-	        $meetup = meetup::findOrFail(Input::get('id'));
+	        $meetup = Meetup::findOrFail(Input::get('id'));
 	    }
 	    catch(exception $e) {
 	        return Redirect::to('/meetup')->with('flash_message', 'MeetUp not found');
 	    }
 
+	    try {
 	    # http://laravel.com/docs/4.2/eloquent#mass-assignment
 	    $meetup->fill(Input::all());
 	    $meetup->save();
 
-	   	return Redirect::action('meetupController@getIndex')->with('flash_message','Your changes have been saved.');
-
+	   	return Redirect::action('MeetupController@getIndex')->with('flash_message','Your changes have been saved.');
+	   }
+	   catch(exception $e) {
+	   	return Redirect::to('/meetup')->with('flash_message', 'Error saving changes');
+	   }
 	}
 
 
+	/**
+	* Process meetup deletion
+	*
+	* @return Redirect
+	*/
+	public function postDelete() {
+		try {
+	        $meetup = Meetup::findOrFail(Input::get('id'));
+	    }
+	    catch(exception $e) {
+	        return Redirect::to('/meetup/')->with('flash_message', 'Could not delete meetup - not found.');
+	    }
+	    Meetup::destroy(Input::get('id'));
+	    return Redirect::to('/meetup/')->with('flash_message', 'Meetup successfully deleted.');
+	}
 
 }

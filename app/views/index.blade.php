@@ -26,7 +26,6 @@
             <li><a href="/meetup">All MeetUps</a></li>
             <li><a href="/meetup/create">Add a MeetUp</a></li>
             <li><a href="/profile">Your Profile</a></li>
-            <li><a href="/contactus">Contact Us</a></li>
             <li><a href="/logout">Log Out</a></li>
           </ul>
         </div>

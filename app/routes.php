@@ -11,11 +11,11 @@
 |
 */
 
-
-Route::get('/classes', function() {
-    echo Paste\Pre::render(get_declared_classes(),'');
-});
 /**
+*Route::get('/classes', function() {
+*   echo Paste\Pre::render(get_declared_classes(),'');
+*});
+*
 * Index
 */
 //Route::get('/', 'IndexController@getIndex');
@@ -51,44 +51,14 @@ Route::post('/meetup/create', 'MeetupController@postCreate');
 
 Route::post('/meetup/delete', 'MeetupController@postDelete');
 
+Route::get('/contact', 'MeetupController@getContact');
+Route::post('/contact', 'MeetupController@postContact');
 
-## Ajax examples
-Route::get('/meetup/search', 'MeetupController@getSearch');
-Route::post('/meetup/search', 'MeetupController@postSearch');
 
 /**
 * Debug
 * (Implicit Routing)
 */
-//Route::controller('debug', 'DebugController');
+Route::controller('debug', 'DebugController');
 
 
-/**
-* Demos
-* (Explicit Routing)
-*/
-
-/*Route::get('/demo/ping-log-file', 'DemoController@pingLogFile');
-Route::get('/demo/new-user-welcome-email', 'DemoController@newUserWelcomeEmail');
-Route::get('/demo/csrf-example', 'DemoController@csrf');
-Route::get('/demo/collections', 'DemoController@collections');
-Route::get('/demo/js-vars', 'DemoController@jsVars');
-
-Route::get('/demo/crud-create', 'DemoController@crudCreate');
-Route::get('/demo/crud-read', 'DemoController@crudRead');
-Route::get('/demo/crud-update', 'DemoController@crudUpdate');
-Route::get('/demo/crud-delete', 'DemoController@crudDelete');
-
-Route::get('/demo/collections', 'DemoController@collections');
-Route::get('/demo/query-without-constraints', 'DemoController@queryWithoutConstraints');
-Route::get('/demo/query-with-constraints', 'DemoController@queryWithConstraints');
-Route::get('/demo/query-responsibility', 'DemoController@queryResponsibility');
-Route::get('/demo/query-with-order', 'DemoController@queryWithOrder');
-
-Route::get('/demo/query-relationships-language', 'DemoController@queryRelationshipslanguage');
-Route::get('/demo/query-relationships-tags', 'DemoController@queryRelationshipstags');
-Route::get('/demo/query-eager-loading-languages', 'DemoController@queryEagerLoadinglanguages');
-Route::get('/demo/query-eager-loading-tags-and-languages', 'DemoController@queryEagerLoadingTagsAndlanguages');
-
-Route::get('/demo/simple-ajax', 'DemoController@getSimpleAjax');
-Route::post('/demo/simple-ajax', 'DemoController@postSimpleAjax'); */
