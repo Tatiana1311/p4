@@ -43,7 +43,7 @@
   <div class="jumbotron">
 
 
-<h1>Find MeetUps you for your language!</h1>
+<h1>Find MeetUps for your language!</h1>
 
 <p>
 	{{ Form::open(array('url' => '/meetup', 'method' => 'GET')) }}

@@ -1,3 +1,26 @@
+
+## P4 by Tatiana Lukyanenkova
+## Matryoshka International
+
+>A website that lets a community of people learn foreign languages and cultures by listing events (MeetUps - I originally had 'events' name, but it caused too much problems with conflicting Events classes in Laravel) where certain languages are spoken.
+>A user can search MeetUps by language, location or name. Also they can add, edit and delete MeetUps if they see incorrect information.
+>I haven't completed My Profile page, as I haven't decided what exactly should go there, perhaps the users can have an option to suggest an event for review, or leave a feedback for existing ones.
+
+The users need to log in to go past the 'login/signup' page. The email field is already pre-filled with an existing login t@gmail.com and the password 123456 can be used to log in for the testing purposes.
+I used Bootstrap for the added design and functionality features.
+
+###Live URL
+*[http://p4.orangewhite.me](http://p4.orangewhite.me)
+
+###Github 
+*[https://github.com/Tatiana1311/p4](https://github.com/Tatiana1311/p4)
+
+###Demo
+*[http://screencast.com/t/5exdmgLfqf4](http://screencast.com/t/5exdmgLfqf4)
+
+
+
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
